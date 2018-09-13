@@ -1,0 +1,41 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url(../images/backgrounds-blank-blue-953214.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;	
+	height: 100%;
+}
+
+.container {
+	margin: auto;
+	text-align: center;
+}
+
+
+nav {
+	background-image: url(../images/background-design-marble-850796.jpg);
+	background-color: white;
+	margin-bottom: 100px;
+}
+
+img {
+	width: 100%;
+	height: 130px;
+}
+
+
+
+#searchBar {
+	background-color: #fff;
+	color: darkblue;
+}
+
+.col.s6 {
+	margin-top: 50px;
+}
+
+
