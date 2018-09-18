@@ -1,4 +1,16 @@
+var mainText = document.getElementById("mainText");
 
+var submitButton =document.getElementById(submitButton);
+
+function submitClick() {
+	
+	var firebaseRef = firebaseRef.child("Text").set("someValue");
+	
+	var messageText = mainText.value;
+
+	firebaseRef.push().set(messageText);
+
+}
 
 function walmartDisplay() {
 
