@@ -12,7 +12,7 @@ url: queryURL,
 method: "GET"
 }).then(function(response) {
 
- var walmartDiv = $("<div class='walmartDiv'");
+ var walmartDiv = $("<div class='walmartDiv'>");
 
  var walmartPrice = response.salesPrice;
 
