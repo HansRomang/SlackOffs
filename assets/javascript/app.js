@@ -1,35 +1,104 @@
+$(function(){
+	var count;
 
-
-function walmartDisplay() {
-
-	var walmartItem = $(this).attr("data-name");
-
-	var queryURL = "http://api.walmartlabs.com/v1/search?apiKey={yjrkwv9phtddy72qkfxg4v33}&lsPublisherId={romanghans}&query=" + walmartItem + "&categoryId=3944&sort=price&order=asc";
-//linking our search term "walmartItem" into our queryURL
-
-$.ajax({
-url: queryURL,
-method: "GET"
-}).then(function(response) {
-
- var walmartDiv = $("<div class='walmartDiv'>");
-
- var walmartPrice = response.salesPrice;
-
- var walmartPriceText = $("<p>").text(walmartPrice);
-
- walmartDiv.append(walmartPriceText);
-
-});
-
-
-};
-
-$("#a").on("click", function(event) {
+$("#call").on("click", function (){
 	event.preventDefault();
+	$("#walmartItemInfo").empty()
+	$("#more").addClass("d-none")
+	search = $("#search").val()
+	count = 1
+	walmartCall(search, count)
+	ebayCall(search, count)
+	
+})
 
-	var walmartInput = $("#searchBar").val().trim();
+$("#more").on("click", function(){
+	search = $("#search").val()
+	walmartCall(search, count)
+})
+
+
+
+
+function walmartCall(){
+			$.ajax({
+					url: `http://api.walmartlabs.com/v1/search?`,
+					method: "GET",
+					data: {
+							"query": search
+							, "format": "json"
+							, "apiKey": "p3dsfmf2vhm67rj2ed4xhhaa"
+							, "start": count
+							, "numItems": 1
+
+							// , "$where": "deptname=''"
+					}
+					// http://api.walmartlabs.com/v1/search?&%24q=phone&%24apiKey=p3dsfmf2vhm67rj2ed4xhhaa&%24format=json
+
+			}).then(function (response) {
+					console.log(response);
+
+					for (i = 0; i < response.items.length; i++) {
+							var card = $("<div>")
+							card.attr({
+									class: "card d-inline-block m-2",
+									style: "width: 250px;"
+							})
+
+							var image = $("<img>")
+							image.attr({
+									src: response.items[i].mediumImage,
+									class: "card-img-top"
+							})
+
+							var cardBody = $("<div>")
+							cardBody.attr("class", "card-body")
+
+							var name = $("<h5>")
+							name.attr("class", "card-title")
+							name.append(response.items[i].name)
+							cardBody.append(name)
+
+							msrp = "$" + response.items[i].msrp
+							
+
+							if (msrp === "$undefined") 
+							msrp = ""
+
+							var name = $("<h5>")
+							name.attr("class", "card-title")
+							name.append("$" + response.items[i].salePrice + " <s>" + msrp +"</s>")
+							cardBody.append(name)
+							
+
+						 
+								
+									var name = $("<h5>")
+									name.attr("class", "card-title")
+									name.append("UPC: " + response.items[i].upc)
+									cardBody.append(name)
+							
+						 
+
+							card.append(image)
+							card.append(cardBody)
+
+
+							$("#walmartItemInfo").append(card)
+							
+
+					}
+					$("#more").removeClass("d-none")
+					count += 0;
+
+					
+
+			})
 
 	
-});
+}
 
+
+	
+
+})
