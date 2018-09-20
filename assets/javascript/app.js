@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(function(){
 	var count;
 
@@ -11,6 +12,21 @@ $("#call").on("click", function (){
 	ebayCall(search, count)
 	
 })
+=======
+var mainText = document.getElementById("mainText");
+
+var submitButton =document.getElementById(submitButton);
+
+function submitClick() {
+	
+	var firebaseRef = firebaseRef.child("Text").set("someValue");
+	
+	var messageText = mainText.value;
+
+	firebaseRef.push().set(messageText);
+
+}
+>>>>>>> 756dce597b748b6019e61a6b943b4c0a25dffec3
 
 $("#more").on("click", function(){
 	search = $("#search").val()
