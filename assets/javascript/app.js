@@ -18,7 +18,7 @@ $("#more").on("click", function(){
 })
 
 
-
+console.log(HansisMoogles);
 
 function walmartCall(){
 			$.ajax({
