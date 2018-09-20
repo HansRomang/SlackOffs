@@ -16,7 +16,7 @@
 	<head>
 		<nav>
 			<div class="nav-wrapper">
-				<a href="#" class="brand-logo center">Amazon & Walmart Comparison</a>
+				<a href="#" class="brand-logo center">Ebay & Walmart Comparison</a>
 			</div>
 		</nav>
 	</head>
@@ -27,21 +27,22 @@
 			<div class="col s12">
 				<form action="search">
 					<!-- Search bar used to draw comparisons between the two sites -->
-					<input type="text" name="search" id="searchBar" placeholder="    Search...">
+					<input type="text" name="search" id="search" placeholder="    Search...">
+					<label for="itemInput"></label>
 				</form>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col s12">
-				<a class="waves-effect waves-light btn-large" style="background-color: yellow; color:blue;">Compare</a>
+				<button class="waves-effect waves-light btn-large" style="background-color: yellow; color:blue;" id="call">Compare</button>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col s6" id="amazon">
-				<img src="./assets/images/amazonLogo.jpg" alt="amazon logo">
+			<div class="col s6" id="ebay">
+				<img src="./assets/images/ebaylogo.jpg" alt="ebay logo" id="ebayPic">
 				<!-- Empty div to dump amazon item picture, price, and description -->
-				<div id="amazonItemInfo"></div>
+				<div id="ebayItemInfo"></div>
 
 			</div>
 			<div class="col s6" id="walmart">
