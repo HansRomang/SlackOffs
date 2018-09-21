@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $(function () {
 	var count;
 
@@ -10,7 +9,7 @@ $(function () {
 		count = 1
 		walmartCall(search, count)
 		ebayCall(search, count)
-=======
+		
 var mainText = document.getElementById("mainText");
 
 var submitButton =document.getElementById(submitButton);
@@ -24,7 +23,6 @@ function submitClick() {
 	firebaseRef.push().set(messageText);
 
 }
->>>>>>> master
 
 	})
 
