@@ -7,16 +7,15 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<link rel="stylesheet" href="./assets/css/style.css">
-	<title>Amazon/Walmart Comparison</title>
+	<title>eBay/Walmart Comparison</title>
 </head>
 
 <body>
-	<!-- First Header, still need to make it more responsive on smaller screens -->
-
+	<!-- First Header,  -->
 	<head>
 		<nav>
 			<div class="nav-wrapper">
-				<a href="#" class="brand-logo center">Ebay & Walmart Comparison</a>
+				<a href="#" class="brand-logo center">eBay & Walmart Comparison</a>
 			</div>
 		</nav>
 	</head>
@@ -28,7 +27,7 @@
 				<form action="search">
 					<!-- Search bar used to draw comparisons between the two sites -->
 					<input type="text" name="search" id="search" placeholder="    Search...">
-					<label for="itemInput"></label>
+					<label for="itemInput" style="width: 100%;"></label>
 				</form>
 			</div>
 		</div>
@@ -37,20 +36,21 @@
 				<button class="waves-effect waves-light btn-large" style="background-color: yellow; color:blue;" id="call">Compare</button>
 			</div>
 		</div>
-
+		<div id="comparisons"></div>
 		<div class="row">
 			<div class="col s6" id="ebay">
-				<img src="./assets/images/ebaylogo.jpg" alt="ebay logo" id="ebayPic">
+				<img src="./assets/images/ebaylogo.jpg" alt="ebay logo" class="ebayphoto" id="headerPics">
 				<!-- Empty div to dump amazon item picture, price, and description -->
 				<div id="ebayItemInfo"></div>
 
 			</div>
 			<div class="col s6" id="walmart">
-				<img src="./assets/images/walmartLogo.jpg" alt="walmart logo">
+				<img src="./assets/images/walmartLogo.jpg" alt="walmart logo" id="headerPics">
 				<!-- Empty div to dump walmart item picture, price, and description -->
 				<div id="walmartItemInfo"></div>
 			</div>
 		</div>
+		
   </div>
   
 
@@ -69,11 +69,8 @@
  firebase.initializeApp(config);
 </script>
 
-<<<<<<< HEAD
 	</div>
 	<script src="https://code.jquery.com/jquery.js"></script>
-=======
->>>>>>> master
 	<script type="text/javascript" src="./assets/javascript/app.js"></script>
 
 	</body>
