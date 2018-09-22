@@ -56,7 +56,7 @@ $(function () {
 				cardBody.append(name)
 				
 				msrp = "$" + response.items[i].msrp
-				walmartPrice = response.items[i].msrp;
+				walmartPrice = response.items[i].salePrice;
 				walmartApiReturned = true;
 
 				if (msrp === "$undefined")
